@@ -6,34 +6,15 @@
 </head>
 <body>
 <div>
-    <p>data publikacji</p>
-    <h3><a href="">Tytuł</a></h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Nunc sagittis, lorem quis imperdiet volutpat, augue diam elementum eros,
-    nec efficitur sapien purus in ex. In fringilla, erat ut venenatis sollicitudin,
-    mi ante venenatis lectus, sed scelerisque augue neque vitae dui. Duis lectus urna,
-    condimentum ut vestibulum nec, ultricies ut diam. Nunc vestibulum leo at sollicitudin maximus.
-    Nulla commodo porttitor tortor, nec venenatis ligula fermentum id. Ut commodo dapibus elit.
-    Vestibulum pharetra justo at libero volutpat, et posuere metus iaculis. Phasellus in massa arcu.
-    Nullam cursus ligula ligula, id convallis purus tincidunt ac. Aliquam commodo lorem in tellus dignissim,
-    in lobortis elit bibendum.Nam felis magna, porta eget mattis a, molestie non neque.
-    Phasellus rhoncus eu nulla ac dignissim. Sed non justo euismod, suscipit risus ut, condimentum ex.
-</p>
+    <h1><a href="">Najnowsze wpisy</a></h1>
 </div>
+
+{% for post in posts %}
 <div>
-    <p>data publikacji</p>
-    <h3><a href="">Tytuł</a></h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Nunc sagittis, lorem quis imperdiet volutpat, augue diam elementum eros,
-    nec efficitur sapien purus in ex. In fringilla, erat ut venenatis sollicitudin,
-    mi ante venenatis lectus, sed scelerisque augue neque vitae dui. Duis lectus urna,
-    condimentum ut vestibulum nec, ultricies ut diam. Nunc vestibulum leo at sollicitudin maximus.
-    Nulla commodo porttitor tortor, nec venenatis ligula fermentum id. Ut commodo dapibus elit.
-    Vestibulum pharetra justo at libero volutpat, et posuere metus iaculis. Phasellus in massa arcu.
-    Nullam cursus ligula ligula, id convallis purus tincidunt ac. Aliquam commodo lorem in tellus dignissim,
-    in lobortis elit bibendum.Nam felis magna, porta eget mattis a, molestie non neque.
-    Phasellus rhoncus eu nulla ac dignissim. Sed non justo euismod, suscipit risus ut, condimentum ex.
-</p>
+    <p>Data publikacji: {{ post.published_date }}</p>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
 </div>
+{% endfor %}
 </body>
 </html>
